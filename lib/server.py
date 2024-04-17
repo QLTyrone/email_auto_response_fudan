@@ -49,7 +49,7 @@ if subject[:6] == '期末成绩查询':
         msg['From'] = user
         msg['To'] = email_message['From']
         msg['Subject'] = "期末成绩"
-        body = "Your score is " + str(score)
+        body = "你的期末成绩是 " + str(score)
         msg.attach(MIMEText(body, 'plain'))
 
         text = msg.as_string()
