@@ -15,7 +15,8 @@ imap_server = config['server']['imap']
 user = config['server']['user']
 password = config['server']['password']
 
-mail = imaplib.IMAP4_SSL(imap_server)
+mail = imaplib.IMAP4(imap_server)
+mail.starttls()
 mail.login(user, password)
 
 mail.select("INBOX")
